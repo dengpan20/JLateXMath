@@ -10,6 +10,8 @@ import android.text.SpannableString;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import com.dengpan.pan.jlatexmath.utils.HtmlUtil;
+
 import org.scilab.forge.jlatexmath.core.AjLatexMath;
 import org.scilab.forge.jlatexmath.core.Insets;
 import org.scilab.forge.jlatexmath.core.TeXConstants;
@@ -54,7 +56,8 @@ private  static final String PHANTOMPATTERN="\\\\phantom\\{(.+?)\\}";
         //同步画笔颜色，使生成图片与文字夜色一致
         AjLatexMath.setColor(getCurrentTextColor());
         //先加载空白图片占位
-        setText(getSpannable(String.valueOf(Html.fromHtml(text))));
+//        setText(getSpannable(String.valueOf(Html.fromHtml(text))));
+        setText(HtmlUtil.fromHtml(text));
         //异步解析公式，然后生成图片
         setTaskSpannableText(text);
     }

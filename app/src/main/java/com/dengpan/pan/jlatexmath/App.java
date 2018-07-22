@@ -21,6 +21,7 @@ public class App extends Application {
         Task.callInBackground(new Callable<Object>() {
             @Override
             public Object call() throws Exception {
+//                AjLatexMath.init(getApplicationContext());
                 AjLatexMath.init(getApplicationContext());
                 return null;
             }

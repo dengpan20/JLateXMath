@@ -10,8 +10,10 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.daquexian.flexiblerichtextview.FlexibleRichTextView;
 import com.dengpan.pan.jlatexmath.db.DBHelper;
 import com.dengpan.pan.jlatexmath.db.Question;
+import com.dengpan.pan.jlatexmath.utils.HtmlUtil;
 
 import java.util.List;
 
@@ -34,8 +36,12 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void convert(BaseViewHolder helper, Question item) {
-            LaTexTextView view = helper.getView(R.id.latex);
-            view.setLinketext(item.getTopic());
+//            LaTexTextView view = helper.getView(R.id.latex);
+//            view.setLinketext(item.getTopic());
+//            helper.setText(R.id.tv_html, HtmlUtil.fromHtml(item.getTopic()));
+            helper.setText(R.id.tv_origin,"原文本："+item.getTopic());
+            FlexibleRichTextView view = helper.getView(R.id.fr_tv);
+            view.setText("转化后："+item.getTopic().replace("[br/]","\n"));
         }
     }
 }

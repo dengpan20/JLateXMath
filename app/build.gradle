@@ -30,6 +30,7 @@ dependencies {
     annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:4.2.4"
     implementation 'com.github.Raizlabs.DBFlow:dbflow-core:4.2.4'
     implementation 'com.github.Raizlabs.DBFlow:dbflow:4.2.4'
-    implementation project(':latexlib')
+//    implementation project(':latexlib')
     implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.github.daquexian:FlexibleRichTextView:0.8.2'
 }
